@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+	{{ menu.title }}
+{% endblock %}
+{% load draw_menu %}
+{% block content %}
+    {% if menu %}
+        <h3 class="text-center ms-3">Tree of {{ menu.title }}</h3>
+        {% draw_menu menu.title %}
+    {% else %}
+        <h5>There is no menu with name {{ slug }}!</h5>
+    {% endif %}
+    <a class="btn btn-outline-info text-decoration-none ms-3" href="/">Go back to menu selection</a>
+{% endblock %}
