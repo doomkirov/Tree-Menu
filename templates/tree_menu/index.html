@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+	Menus list
+{% endblock %}
+{% block content %}
+	<h1>Choose menu to draw:</h1>
+    <div class="col justify-content-center d-flex">
+        {% for menu in menu_list %}
+            <a class="btn btn-outline-info text-decoration-none ms-3" href="{{ menu.slug }}">{{ menu.title }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
